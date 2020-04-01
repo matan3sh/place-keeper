@@ -18,7 +18,6 @@ async function geocode(e) {
             }
         })
         .then(function (response) {
-            console.log(response);
             var fullName = response.data.results[0].formatted_address;
             var area = response.data.results[0].address_components[2].long_name;
             var country = response.data.results[0].address_components[3]
@@ -39,4 +38,12 @@ async function geocode(e) {
         .catch(function (error) {
             console.log(error);
         });
+}
+
+function setLocationAtMap(lng, lat) {
+    var options = {
+        zoom: 13,
+        center: { lat, lng }
+    };
+    var map = new google.maps.Map(document.querySelector('#map'), options);
 }

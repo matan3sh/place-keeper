@@ -32,11 +32,16 @@ function renderLocations() {
                     <td>${location.country}</td>
                     <td><strong>Lat:</strong>${location.lat}<strong> Lng:</strong>${location.lng}</td>
                     <td>
-                        <button class="btn btn-danger" onclick="onDeleteLocation('${location.id}')">Delete</button>
+                        <button class="btn btn-success" onclick="onSetLocationInMap(${location.lng},${location.lat})">See On Map</button>
+                        <button class="btn btn-danger" onclick="onDeleteLocation(${location.id})">Delete</button>
                     </td>
                 </tr>
         `
     )
     document.querySelector('.locations-list').innerHTML = strHTML.join('')
+}
+
+function onSetLocationInMap(lng, lat) {
+    setLocationAtMap(lng, lat)
 }
 
