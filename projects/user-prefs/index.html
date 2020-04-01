@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="lib/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <title>User Prefs</title>
+</head>
+<body onload="onInit()">
+        <form onsubmit="onSubmit(event)">
+            <div class="set-bgc">
+                <label for="background-color">Background Color:</label>
+                <input type="color" class="background-color" id="background-color" onchange="onBackgroundChange(value)">
+            </div>
+            <div class="set-text-color">
+                <label for="text-color">Text Color:</label>
+                <input type="color" class="text-color" id="text-color" onchange="onTextColorChange(value)">
+            </div>
+            <div class="set-birth-date">
+                <label for="birth-date">Birth Date:</label>
+                <input type="date" class="user-date" id="user-date">
+            </div>
+            <div class="set-email">
+                <label for="email">Email:</label>
+                <input type="email" class="user-email" id="user-email" required>
+            </div>
+            <div>
+                <label for="age">Age:</label>
+                <input type="range" class="user-age" id="user-age" min="18" max="120" value="30" onchange="onAgeChange(value)">
+                <span class="user-age-value">30</span>
+            </div>
+            <input class="btn btn-default" type="submit" value="Save">
+        </form>
+
+        <script src="js/storage-service.js"></script>
+        <script src="js/prefs-controller.js"></script>
+        <script src="js/prefs-service.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+#map {
+  height: 400px;
+  width: 100%;
+}
+
+td:hover {
+  background-color: rgb(226, 226, 226);
+}

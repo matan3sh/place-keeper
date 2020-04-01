@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <link rel="stylesheet" href="lib/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <title>Place-Keeper App</title>
+</head>
+<body onload="onInit()">
+    <div class="container">
+        <h1 class="text-center">Place Keeper</h1>
+        <div id="map"></div>
+    </div>
+    <div class="container-places text-center m-5">
+        <h2 id="text-center">Enter Location</h2>
+            <form id="location-form">
+                <input type="text" id="location-input" class="form-control form-control-lg">
+                <br>
+                <button onclick="onAddLocation(event)" class="btn btn-primary btn-block">Submit</button>
+            </form>
+
+            <table class="table table table-striped mt-5">
+                <thead>
+                  <tr>
+                    <th>FULL NAME</th>
+                    <th class="th-title" onclick="onSort(this)">AREA</th>
+                    <th class="th-price" onclick="onSort(this)">COUNTRY</th>
+                    <th>Geometry</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody class="locations-list"></tbody>
+              </table>
+
+    </div>
+    <script src="lib/axios.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAu4wgjOGVqaz0cBDpsLy8EX2hp-uCh4lE&callback=initMap"
+    async defer></script>
+    
+    <script src="js/util.js"></script>
+    <script src="js/storage-service.js"></script>
+    <script src="js/map-service.js"></script>
+    <script src="js/location-service.js"></script>
+    <script src="js/controller.js"></script>
+</body>
+</html>
