@@ -1,7 +1,5 @@
 'use strict'
 
-var loading = true
-
 function onInit() {
     createLocations()
     renderLocations()
